@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+.social_icons {
+  height: 2em;
+}
+
+.social_icons img {
+  width: 2em;
+}
+
+.social_icons li {
+  display: inline-block;
+  float: right;
+}
+
+.nopad {
+  padding: 0 !important;
+}
+
+.novmar {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
