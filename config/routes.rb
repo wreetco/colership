@@ -1,11 +1,23 @@
 Rails.application.routes.draw do
+  get 'inventory/index'
+
+  get 'contact/index'
+
+  get 'financing/index'
+
   get 'home/index'
+	get 'contact', to: 'contact#index'
+	get 'financing', to: 'financing#index'
+	get 'inventory', to: 'inventory#index'
 
   mount Shoppe::Engine => "/shoppe"
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
   root to: "home#index"
+
+	# vin tool route
+	get "/vinnythevintool/:vin", to: "vin_lookup#getCarByVin"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

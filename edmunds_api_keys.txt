@@ -1,0 +1,6 @@
+"complete set" API:
+key: zhdwzygr8cayehhyxjqge8dj
+secret: Q3K2WKGkTj6dqvrA7PYWCnsx
+
+"carcode" API:
+key: emfk3qxcwwrbcb2tt4kn93aa

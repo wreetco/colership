@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201033319) do
+ActiveRecord::Schema.define(version: 20151212014338) do
 
   create_table "nifty_key_value_store", force: :cascade do |t|
     t.integer "parent_id",   limit: 4
@@ -276,10 +276,14 @@ ActiveRecord::Schema.define(version: 20151201033319) do
     t.string   "miles",             limit: 255
     t.string   "engine",            limit: 255
     t.string   "transmission",      limit: 255
-    t.string   "mpg",               limit: 255
+    t.string   "mpg_city",          limit: 255
     t.string   "color",             limit: 255
     t.string   "fuel_type",         limit: 255
     t.string   "trim",              limit: 255
+    t.string   "mpg_highway",       limit: 255
+    t.string   "drivetrain",        limit: 255
+    t.string   "mileage",           limit: 255
+    t.string   "interior",          limit: 255
   end
 
   add_index "shoppe_products", ["parent_id"], name: "index_shoppe_products_on_parent_id", using: :btree

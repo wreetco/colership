@@ -1,56 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Dealership</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-	<meta name="theme-color" content="#424242">
-</head>
-<body>
-  <div class="row nopad container novmar">
-    <div class="col s12 right-align">
-      <ul class="right social_icons">
-				<li>
-					<a href="http://www.facebook.com/wreetco">
-						<img src="http://wreet.co/assets/facebook_icon.png" alt="Facebook" />
-					</a>
-				</li>
-				<li>
-					<a href="https://twitter.com/wreetco" target="_blank">
-						<img src="http://wreet.co/assets/twitter_icon.png" alt="Twitter" />
-					</a>
-				</li>
-				<li>
-					<a href="http://google.com/+wreet">
-						<img src="http://wreet.co/assets/google_plus_icon.png" alt="Google+" />
-					</a>
-				</li>
-				<li>
-					<a href="https://github.com/wreetco" target="_blank">
-						<img src="http://wreet.co/assets/github_icon.png" alt="Github" />
-					</a>
-				</li>
-			</ul>
-    </div>
-  </div><!-- end social row -->
-  <!-- do the nav thang -->
-  <nav class="nopad nomar grey darken-3">
-    <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Home</a></li>
-        <li><a href="badges.html">Inventory</a></li>
-        <li><a href="collapsible.html">Financing</a></li>
-        <li><a href="collapsible.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+	<head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  	<meta name="theme-color" content="#424242">
+	</head>
+	<body>
+		<nav class="grey darken-4" role="navigation">
+			<div class="nav-wrapper container">
+				<a id="logo-container" href="#" class="red-text darken-1 brand-logo">Quik</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html" class="white-text" style="border-bottom: 3px solid #E53935">Home</a></li>
+					<li><a href="financing.html" class="white-text">Finance</a></li>
+					<li><a href="inventory.html" class="white-text">Inventory</a></li>
+					<li><a href="contact.html" class="white-text">Contact</a></li>
+				</ul>
+				<ul id="nav-mobile" class="side-nav">
+					<li><a href="index.html" class="black-text" style="border-bottom: 3px solid #E53935">Home</a></li>
+					<li><a href="financing.html" class="black-text">Finance</a></li>
+					<li><a href="inventory.html" class="black-text">Inventory</a></li>
+					<li><a href="contact.html" class="black-text">Contact</a></li>
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
   <!-- end nav bur -->
   <div class="container">
     <%= yield %>
   </div>
 
-</body>
-</html>
+  <footer class="page-footer grey darken-4">
+  			<div class="container">
+  				<div class="row">
+  					<div class="col l6 s12">
+  						<h5 class="white-text">Quik Auto Sales</h5>
+  						<p class="grey-text text-lighten-4">We at Quik Auto Sales strive to provide our customers with the best customer service possible. Our selection of quality pre-owned vehicles includes cars, trucks, sport utilities, and vans for nearly any budget or lifestyle. Stop by for a test drive today! </p>
+  					</div>
+  					<div class="col l6 s12 center">
+  						<h5 class="white-text">Navigation</h5>
+  						<ul>
+  					<li><a href="index.html" class="white-text">Home</a></li>
+  					<li><a href="financing.html" class="white-text">Finance</a></li>
+  					<li><a href="inventory.html" class="white-text">Inventory</a></li>
+  					<li><a href="contact.html" class="white-text">Contact</a></li>
+  						</ul>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="footer-copyright grey darken-3">
+  				<div class="container">
+  					Powered by <a href="http://wreet.co" >wreetco</a>
+  				</div>
+  			</div>
+  		</footer>
+
+  		<script>
+  		    $(document).ready(function(){
+  					$('.button-collapse').sideNav();
+  				});
+  		</script>
+  	</body>
+  </html>
