@@ -1,2 +1,75 @@
-<h1>Inventory#index</h1>
-<p>Find me in app/views/inventory/index.html.erb</p>
+<script>
+	window.makes = <%= raw @makes_json %>;
+</script>
+
+<div class="section">
+				<div class="row" style="margin-bottom: 2.8em;">
+					<div class="col s12 l12">
+						<h2 class="center">Inventory</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m6">
+						<div class="icon-block">
+							<h2 class="center"><i class="material-icons" style="font-size: 1.66em;">search</i></h2>
+							<br />
+							<p class="center">
+								<h5 class="center">Use our inventory system to find the perfect pre-owned vehicle for you today!</h5>
+							</p>
+						</div>
+					</div>
+					<div class="col s12 m6">
+            <form action="/inventory/search" method="post">
+						  <div class="card  hoverable grey lighten-3">
+							  <div class="card-content black-text">
+								  <span class="card-title red-text darken-1">
+									  <h4>Car Search</h4>
+								  </span>
+								  <div class="row">
+  								  <div class="input-field col s12">
+                      <select onchange="modelUpdate()" id="selectOpt" name="make">
+                        <option value="" disabled selected>-</option>
+                        <% @makes.each do |m| %>
+                          <option value="<%= m[:make] %>"><%= m[:make] %></option>
+                        <% end %>
+										  </select>
+										  <label>Make</label>
+									  </div>
+                    <div class="input-field col s12">
+                      <select id="models_select" name="model">
+                        <option value="" disabled slected>-</option>
+                      </select>
+										  <label>Model</label>
+                    </div>
+									  <div class="col s12 m12 center">
+										  <br>
+										  <button class="btn waves-effect waves-light red darken-1" type="submit" name="action">Search
+											  <i class="material-icons right">send</i>
+										  </button>
+									  </div>
+								  </div>
+							  </div>
+						  </div>
+            </div>
+					</div>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function() {
+					$('select').material_select();
+				});
+
+        function modelUpdate(){
+          var makeselect = document.getElementById("selectOpt");
+          var make = (makeselect.options[makeselect.selectedIndex].value);
+          for(var i = 0; i < makes[make].length; i++) {
+            model = makes[make][i];
+            option = document.createElement("option");
+            option.value = makes[make][i];
+            option.innerHTML = makes[make][i];
+            $('#models_select')[0].appendChild(option);
+          }
+          $('select').material_select();
+        }
+			</script>
+</div>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 	get 'contact', to: 'contact#index'
 	get 'financing', to: 'financing#index'
 	get 'inventory', to: 'inventory#index'
+	post 'inventory/search', to: 'inventory#search'
 
   mount Shoppe::Engine => "/shoppe"
 

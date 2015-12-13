@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/wreetco/dealershoppe
-  revision: 3c2a2d130a5d7b31773f224419643a982fe78985
+  revision: 59dbda3af79322c672fb34e862c0b54dc5a6b3fe
   specs:
     shoppe (1.1.1)
       awesome_nested_set (~> 3.0.2)
