@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 	get 'inventory', to: 'inventory#index'
 	post 'inventory/search', to: 'inventory#search'
 
-  mount Shoppe::Engine => "/shoppe"
+  mount Shoppe::Engine => "/admin"
 
-  get "product/:permalink", to: "products#show", as: "product"
+  get "car/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
   root to: "home#index"
 

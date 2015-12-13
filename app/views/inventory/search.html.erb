@@ -3,26 +3,46 @@
   <div class="row" style="margin-bottom: 2.8em;">
     <div class="col s12 l12">
       <h2 class="center">Inventory</h2>
+      <h5 class="center">Search Results</h5>
     </div>
   </div>
-
-
+  
   <div class="row">
     
     <div class="row">
-      <div class="col s12 m7">
+<!-- repeat for every car in our cars array this card -->
+      <div class="col s12 m6 l4">
         <div class="card">
           <div class="card-image">
-            <img src="http://i.istockimg.com/file_thumbview_approve/22960889/6/stock-photo-22960889-suv-car-driving-forest-road-clipping-path-included.jpg">
-            <span class="card-title"></span>
+            <img src="http://i.istockimg.com/file_thumbview_approve/22960889/6/stock-photo-22960889-suv-car-driving-forest-road-clipping-path-included.jpg" alt="<%= @cars[0].year %> <%= @cars[0].make %> <%= @cars[0].model %>">
+            <span class="card-title red-text darken-1" style="background-color: rgba(15, 15, 15, 0.85); width: 100%;"><%= @cars[0].year %> <%= @cars[0].make %> <%= @cars[0].model %></span>
           </div>
           <div class="card-content">
-            <p>
-              <%= @cars[0].year %> <%= @cars[0].make %> <%= @cars[0].model %>
-            </p>
+            <div class="row">
+              <div class="col s6 m6">
+                <b>Price:</b> $<%= @cars[0].price %>
+              </div>
+              <div class="col s6 m6">
+                <b>Mileage:</b> <%= @cars[0].miles %>
+              </div>
+              <div class="col s6 m6">
+                <b>Engine:</b> <%= @cars[0].engine %>
+              </div>
+              <div class="col s6 m6">
+                <b>Drivetrain:</b> <%= @cars[0].drivetrain %>
+              </div>
+              <div class="col s6 m6">
+                <b>Transmission:</b> <%= @cars[0].transmission %>
+              </div>
+              <div class="col s6 m6">
+                <b>Fuel Type:</b> <%= @cars[0].fuel_type %>
+              </div>
+              <br>
+            </div>
           </div>
           <div class="card-action">
-            <a href="<%= @cars[0].permalink %>">More Info!</a>
+            <a href="/car/<%= @cars[0].permalink %>" class="btn center waves-effect waves-light white-text red darken-1">More Info!</a>
+            <a href="/contact.html" class="btn center waves-effect waves-light white-text red darken-1 right">Buy Now!</a>
           </div>
         </div>
       </div>

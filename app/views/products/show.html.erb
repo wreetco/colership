@@ -1,1 +1,78 @@
-hello world
+<div class="section">
+   <div class="row card hoverable grey lighten-3" style="width: 90%; margin: 3em auto;">
+
+    <% if @car.attachments.length > 1 %>
+      <div class="slider">
+        <ul class="slides">
+          <% @car.attachments.each do |img| %>
+            <li>
+              <img src="<%= img.path %>">
+              <div class="caption"></div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <div class="card-image">
+        <img src="<%= if @car.default_image then @car.default_image.path end %>" alt="<%= @car.year %> <%= @car.make %> <%= @car.model %>">
+        <span class="card-title white-text" style="background-color: rgba(15,15,15, .85); width: 100%;"> <%= @car.year %> <%= @car.make %> <%= @car.model %> </span>
+      </div>
+    <% end %>
+
+    <br>
+    <div class="card-content">
+      <div class="col s6 m4 l3">
+        <b>Make:</b> <%= @car.make %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Model:</b> <%= @car.model %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Year:</b> <%= @car.year %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Price:</b> $<%= @car.price %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Engine:</b> <%= @car.engine %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Miles:</b> <%= @car.miles %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Transmission:</b> <%= @car.transmission %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Fuel Type:</b> <%= @car.fuel_type %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Color:</b> <%= @car.color %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>MPG City:</b> <%= @car.mpg_city %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>MPG Highway:</b> <%= @car.mpg_highway %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Drivetrain:</b> <%= @car.drivetrain %>
+      </div>
+      <div class="col s6 m4 l3">
+        <b>Trim:</b> <%= @car.trim %>
+      </div>
+      <div class="col s12">
+        <b>Description:</b><br>
+        <%= @car.description %>
+      </div>
+      <div class="col s12">
+        <a href="../contact.html" class="waves-effect waves-light btn white-text red darken-1" style="margin: 1em;">Buy Now!</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+    $('.slider').slider();
+  });
+</script>

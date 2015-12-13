@@ -30,20 +30,20 @@
 		<nav class="grey darken-4" role="navigation">
 			<div class="nav-wrapper container">
 				<a id="logo-container" href="/" class="brand-logo">
-          <img class="hide-on-med-and-up circle z-depth-2" src="/assets/qlogo.png" style="max-height:54px;">
-          <img class="hide-on-small-only circle z-depth-2" src="/assets/qlogo.png" style="max-height: 63px;">
+          <img class="hide-on-med-and-up" src="/assets/qlogoinvert.png" alt="Quik Auto Sales Logo" style="max-height:54px; padding: .2em;">
+          <img class="hide-on-small-only" src="/assets/qlogoinvert.png" alt="Quik Auto Sales Logo" style="max-height: 63px; padding: .2em;">
         </a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="/" class="white-text" style="border-bottom: 3px solid #E53935">Home</a></li>
-					<li><a href="/financing" class="white-text">Finance</a></li>
-					<li><a href="/inventory" class="white-text">Inventory</a></li>
-					<li><a href="/contact" class="white-text">Contact</a></li>
+					<li><a href="/" class="white-text <%= if request.path == '/' then 'menu-active' end %>">Home</a></li>
+					<li><a href="/financing" class="white-text <%= if request.path == '/financing' then 'menu-active' end %>">Finance</a></li>
+					<li><a href="/inventory" class="white-text <%= if (request.path.index('inventory') || request.path.index('car')) then 'menu-active' end %>">Inventory</a></li>
+					<li><a href="/contact" class="white-text <%= if request.path == '/contact' then 'menu-active' end %>">Contact</a></li>
 				</ul>
 				<ul id="nav-mobile" class="side-nav">
-					<li><a href="/" class="black-text" style="border-bottom: 3px solid #E53935">Home</a></li>
-					<li><a href="/financing.html" class="black-text">Finance</a></li>
-					<li><a href="/inventory.html" class="black-text">Inventory</a></li>
-					<li><a href="/contact.html" class="black-text">Contact</a></li>
+					<li><a href="/" class="black-text <%= if request.path == '/' then 'menu-active' end %>">Home</a></li>
+					<li><a href="/financing" class="black-text <%= if request.path == '/financing' then 'menu-active' end %>">Finance</a></li>
+					<li><a href="/inventory" class="black-text <%= if (request.path.index('inventory') || request.path.index('car')) then 'menu-active' end %>">Inventory</a></li>
+					<li><a href="/contact" class="black-text <%= if request.path == '/contact' then 'menu-active' end %>">Contact</a></li>
 				</ul>
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 			</div>
