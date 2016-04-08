@@ -12,68 +12,101 @@
 
   	<div class="section">
 
-			<div class="row grey lighten-3 z-depth-1" style="position: relative;">
-				<div class="col s12 hide-on-small-only" style="padding: 0;">
-					<div class="slider ">
+			<div class="row grey lighten-3 z-depth-1"  style="position: relative;">
+				<div class="col s12" style="padding: 0;">
+					<div class="slider" style="text-shadow: 0 0 15px rgba(0,0,0,1);">
 						<ul class="slides">
 							<li>
-								<img src="http://i.istockimg.com/file_thumbview_approve/73683729/6/stock-photo-73683729-african-american-car-salesperson-talking-with-his-customers-.jpg"> <!-- random image -->
-								<div class="caption center-align black-text">
-									<h3>This is our big Tagline!</h3>
-									<h5 class="light black-text">Here's our small slogan.</h5>
+								<img src="assets/carlot.jpg" style="width: 100%;" alt="photo of a car lot">
+								<div class="caption left-align red-text darken-1">
+									<h3>Quik Auto Sales</h3>
+									<h5 class="light white-text">A Company You Can Trust.</h5>
 								</div>
 							</li>
 							<li>
-								<img src="http://i.istockimg.com/file_thumbview_approve/58653654/6/stock-photo-58653654-couple-communicating-with-car-sales-person-.jpg"> <!-- random image -->
-								<div class="caption left-align black-text">
-									<h3>Left Aligned Caption</h3>
-									<h5 class="light black-text">Here's our small slogan.</h5>
+								<img src="assets/family.jpg" style="width: 100%;" alt="family buying a pre-owned vehicle">
+								<div class="caption left-align red-text">
+									<h3>Professional Service</h3>
+									<h5 class="light white-text hide-on-small-only">We don't just want to sell you a car, <br>we want to be your family's number one car connection.</h5>
+								  <h5 class="light white-text hide-on-med-and-up">We don't just want to sell you a car, we want to be your family's number one car connection.</h5>
+                </div>
+							</li>
+							<li>
+								<img src="assets/sold.jpg" style="width: 100%;" alt="happy customer with new vehicle">
+								<div class="caption left-align red-text">
+									<h3>Convenience</h3>
+									<h5 class="light white-text">Quik and easy approval for all credit situations.</h5>
 								</div>
 							</li>
 							<li>
-								<img src="http://i.istockimg.com/file_thumbview_approve/68825775/6/stock-photo-68825775-dealer-new-cars-stock.jpg"> <!-- random image -->
-								<div class="caption right-align black-text">
-									<h3>Right Aligned Caption</h3>
-									<h5 class="light black-text">Here's our small slogan.</h5>
-								</div>
-							</li>
-							<li>
-								<img src="http://i.istockimg.com/file_thumbview_approve/47748932/6/stock-photo-47748932-young-couple-celebrating-purchase-of-car-in-showroom.jpg"> <!-- random image -->
-								<div class="caption center-align black-text">
-									<h3>This is our big Tagline!</h3>
-									<h5 class="light black-text">Here's our small slogan.</h5>
+								<img src="assets/salesteam.jpg" style="width: 100%;" alt="smiling sales team">
+								<div class="caption left-align red-text">
+									<h3>Financing</h3>
+									<h5 class="light white-text hide-on-small-only">As little as $500 down with<br> interest rates as low as 1.9% O.A.C.</h5>
+                  <h5 class="light white-text hide-on-med-and-up">As little as $500 down with interest rates as low as 1.9% O.A.C.</h5> 
 								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
 
-				<div class="breakout row s12">
+				<div class="breakout row s12 hide-on-small-only">
 					<span class="quick_contact">Quik Contact</span>
-					<div class="input-field col s12" style="margin-top: 0;">
-						<input id="first_name" type="text" class="validate">
-						<label for="first_name">First Name</label>
-					</div>
-					<div class="input-field col s12">
-						<input id="last_name" type="text" class="validate">
-						<label for="last_name">Last Name</label>
-					</div>
-					<div class="input-field col s12">
-						<input id="email" type="text" class="validate">
-						<label for="email">Email</label>
-					</div>
-					<div class="input-field col s12">
-						<input id="phone" type="text" class="validate">
-						<label for="phone">Phone</label>
-					</div>
-					<div class="col s12 center">
-						<button style="margin-top: 1em;" class="btn waves-effect waves-light red darken-1" type="submit" name="action">
-							Send <i class="material-icons right">send</i>
-						</button>
-					</div>
+					<form method="post" action="/contact/new" class="quick_contact_styles">
+						<input type="hidden" name="contact[form]" value="Quik Contact">
+						<div class="input-field col s12" style="margin-top: 0;">
+							<input id="first_name" type="text" name="contact[first_name]" class="validate">
+							<label for="first_name">First Name</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="last_name" type="text" name="contact[last_name]" class="validate">
+							<label for="last_name">Last Name</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="email" type="text" name="contact[email]" class="validate">
+							<label for="email">Email</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="phone" type="text" name="contact[phone]" class="validate">
+							<label for="phone">Phone</label>
+						</div>
+						<div class="col s12 center">
+							<button style="margin-top: 1em;" class="btn waves-effect waves-light red darken-1" type="submit" name="action">
+								Send <i class="material-icons right">send</i>
+							</button>
+						</div>
+					</form>
 				</div>
-
-			</div>
+      </div>
+      <div class="row hide-on-med-and-up card hoverable grey lighten-3">
+        <div class="card-content">    
+          <span>Quik Contact</span>
+          <form method="post" action="/contact/new" class="quick_contact_styles">
+            <input type="hidden" name="contact[form]" value="Quik Contact">
+            <div class="input-field col s12" style="margin-top: 0;">
+              <input id="first_name" type="text" name="contact[first_name]" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="last_name" type="text" name="contact[last_name]" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="email" type="text" name="contact[email]" class="validate">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="phone" type="text" name="contact[phone]" class="validate">
+              <label for="phone">Phone</label>
+            </div>
+            <div class="col s12 center">
+              <button style="margin-top: 1em; margin-bottom: 2em;" class="btn waves-effect waves-light red darken-1" type="submit" name="action">
+                Send <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
 
 			<div class="row">
 				<div class="col s12 m4">
@@ -82,7 +115,8 @@
 						<h5 class="center">Inventory</h5>
 						<br />
 						<p class="center">
-							Search our selection of the best pre-owned vehicles in town. We have exactly what you are looking for and want to get you in your new pre-owned vehicle today!
+							Search our selection of the best pre-owned vehicles in town. 
+              We get new inventory daily, so if you don't see exactly what you are looking for, let us know and we will find it for you!
 							<br><br>
 							<a href="/inventory" class="waves-effect waves-light btn white-text red darken-1">Search Now</a>
 						</p>
@@ -95,7 +129,7 @@
 						<h5 class="center">Finance</h5>
 						<br />
 						<p class="center">
-							Let our expert team of professional salesmen here at Quik Auto Sales  guide you through the financing process, see how easy our loan process is and get approved today!
+							Let our expert team of professional salesmen here at Quik Auto Sales guide you through the financing process, see how quik and easy our loan process is and get approved today!
 							<br><br>
 							<a href="/financing" class="waves-effect waves-light btn white-text red darken-1">Get Financed</a>
 						</p>

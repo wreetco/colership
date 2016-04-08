@@ -19,7 +19,7 @@ angular.module("vinLookup", ['ngRoute'])
 	return {
 		getCarByVin: function($main_scope, vin_number) {
       // hardcron a base case
-      url = "http://dev.wreet.co/vinnythevintool/" + vin_number;
+      url = "https://quik-autosales.com/vinnythevintool/" + vin_number;
 			$http.get(url).
 			success(function(data, status, headers, config) {
 				$main_scope.cars = angular.fromJson(data);

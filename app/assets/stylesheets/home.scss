@@ -2,19 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*FORM STUFF */
+/* slider indicators */
+.slider .indicators .indicator-item.active {
+  background-color: #E53935 !important;
+}
+
 /* label color */
 .input-field label {
-   color: #000;
+   color: #000 !important;
 }
+@media (min-width: 600px) {
+  .quick_contact_styles .input-field label {
+    color: #fff !important;
+  }
+
+  .quick_contact_styles .input-field input[type=text]:focus {
+    border-bottom: 1px solid #fff !important;
+    box-shadow: 0 1px 0 0 #fff !important;
+  }
+}
+
 /* label focus color */
 .input-field input[type=text]:focus + label {
-  color: #fff !important;
+  color: 000 !important;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
-  border-bottom: 1px solid #fff !important;
-  box-shadow: 0 1px 0 0 #fff !important;
+  border-bottom: 1px solid #000 !important;
+  box-shadow: 0 1px 0 0 #000 !important;
 }
+.input-field input[type=number]:focus {
+  border-bottom: 1px solid #000 !important;
+  box-shadow: 0 1px 0 0 #000 !important;
+}
+.input-field input[type=email]:focus {
+  border-bottom: 1px solid #000 !important;
+  box-shadow: 0 1px 0 0 #000 !important;
+}
+.input-field input[type=tel]:focus {
+  border-bottom: 1px solid #000 !important;
+  box-shadow: 0 1px 0 0 #000 !important;
+}
+
 /* valid color */
 .input-field input[type=text].valid {
   border-bottom: 1px solid #000;
@@ -29,10 +59,17 @@
 .input-field .prefix.active {
   color: #000;
 }
-
+/*Select Dropdown */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #000 !important;
 }
+/*Checkbox fill color */
+.input-field input[type=checkbox].filled-in:checked + label:after {
+  border: 2px solid #E53935 !important;
+   background-color: #E53935 !important;
+}
+/* End Form Stuff */
+
 
 nav li a {
   font-size: 1.25em !important;
@@ -40,6 +77,23 @@ nav li a {
 
 .menu-active {
   border-bottom: 3px solid #E53935;
+}
+
+.nogut {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+h5 {
+  font-weight: lighter !important;
+}
+
+#details {
+  position: relative;
+  left: 2em;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
 }
 
 .breakout {
@@ -79,6 +133,35 @@ nav li a {
   font-size: 1.33em;
 }
 
+.m7 p {
+  font-size: 1.25em !important;
+  line-height: 1.25em !important;
+  margin-bottom: 1em;
+}
+
+.search-crumbs {
+  font-size: 1.25em;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.opt-table {
+  width: 95%;
+  border-collapse: collapse;
+}
+
+.opt-table thead td {
+  padding-top: 0 !important;
+}
+
+.opt-table tr td {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.specs tr td:first-child {
+  font-weight: bold;
+}
+
 // small-only overrides/rules
 @media (max-width: 600px) {
   .breakout {
@@ -86,9 +169,15 @@ nav li a {
     position: relative !important;
     background-color: transparent !important;
     padding-left: 1em !important;
+    color: #000 !important;
+
   }
 
   .quick_contact {
     color: #222 !important;
+  }
+
+  #details {
+    left: 0 !important;
   }
 }

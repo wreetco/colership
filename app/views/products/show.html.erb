@@ -1,13 +1,16 @@
-<div class="section">
-   <div class="row card hoverable grey lighten-3" style="width: 90%; margin: 3em auto;">
-
+ <div class="row" style="margin-bottom: 0;">
+   <div class="col s12">
+     <h3><%= @car.year %> <%= @car.make %> <%= @car.model %></h3>
+   </div>
+ </div>
+ <div class="row">
+  <div class="col s12 m9 card hoverable grey lighten-3 nogut">
     <% if @car.attachments.length > 1 %>
-      <div class="slider">
+      <div class="slider card-image">
         <ul class="slides">
           <% @car.attachments.each do |img| %>
             <li>
               <img src="<%= img.path %>">
-              <div class="caption"></div>
             </li>
           <% end %>
         </ul>
@@ -15,64 +18,124 @@
     <% else %>
       <div class="card-image">
         <img src="<%= if @car.default_image then @car.default_image.path end %>" alt="<%= @car.year %> <%= @car.make %> <%= @car.model %>">
-        <span class="card-title white-text" style="background-color: rgba(15,15,15, .85); width: 100%;"> <%= @car.year %> <%= @car.make %> <%= @car.model %> </span>
       </div>
     <% end %>
 
     <br>
-    <div class="card-content">
-      <div class="col s6 m4 l3">
-        <b>Make:</b> <%= @car.make %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Model:</b> <%= @car.model %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Year:</b> <%= @car.year %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Price:</b> $<%= @car.price %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Engine:</b> <%= @car.engine %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Miles:</b> <%= @car.miles %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Transmission:</b> <%= @car.transmission %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Fuel Type:</b> <%= @car.fuel_type %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Color:</b> <%= @car.color %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>MPG City:</b> <%= @car.mpg_city %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>MPG Highway:</b> <%= @car.mpg_highway %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Drivetrain:</b> <%= @car.drivetrain %>
-      </div>
-      <div class="col s6 m4 l3">
-        <b>Trim:</b> <%= @car.trim %>
-      </div>
-      <div class="col s12">
-        <b>Description:</b><br>
-        <%= @car.description %>
-      </div>
-      <div class="col s12">
-        <a href="../contact.html" class="waves-effect waves-light btn white-text red darken-1" style="margin: 1em;">Buy Now!</a>
+    <div class="card-content" style="padding-top: 0;">
+      <!-- @car.product_attributes -->
+      <div class="row">
+        <div class="col m6 s12">
+          <table class="opt-table specs">
+            <% if @car.trim.length > 0 %>          
+              <tr>
+                <td>Trim</td>
+                <td><%= @car.trim %></td>
+              </tr>
+            <% end %>
+            <% if @car.fuel_type.length > 0 %>
+              <tr>
+                <td>Fuel Type</td>
+                <td><%= @car.fuel_type %></td>
+              </tr>
+            <% end %>
+            <% if @car.drivetrain.length > 0 %>
+              <tr>
+                <td>Drivetrain</td>
+                <td><%= @car.drivetrain %></td>
+              </tr>
+            <% end %>
+            <% if @car.interior.length > 0 %>
+              <tr>
+                <td>Interior</td>
+                <td><%= @car.interior %></td>
+              </tr>
+            <% end %>
+          </table>
+          <br />
+          <p>
+            <%= @car.description %>
+          </p>
+        </div>
+        <div class="col m6 s12">
+          <table class="opt-table">   
+            <tr>
+              <td colspan="2"><b>Options</b></td>
+            </tr>
+            <% @car.product_attributes.each do |att| %>
+              <tr>
+                <td><%= att.key %></td>
+                <td><%= att.value %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
       </div>
     </div>
 
+  </div><!-- end col -->
+  <!-- price col -->
+  <div class="col s12 m3" id="details">
+    <% if @car.price > 0 %>
+      <div class="card-panel grey lighten-3" style="padding-bottom: 2.5em; padding-top: 1em;">
+        <h5>
+          Price
+          <span class="right"><span style="font-size: .8em;">$</span>
+          <%= number_with_precision(@car.price, :precision => 0) %></span>
+        </h5>
+        <span>&nbsp;</span><a href="/contact#<%= "/car/#{@car.permalink}" %>" class="right waves-effect waves-light btn white-text red darken-1" style="margin: .5em 0 1em 0;">Buy Now!</a>
+      </div>
+    <% end %>
+
+    <div class="card-panel grey lighten-3" style="font-size: 1.5em;">
+      <% if @car.mpg_city.length > 0 || @car.mpg_highway.length > 0 %>
+        <p>
+          <i class="material-icons small">local_gas_station</i>
+          <span class="right">
+            <%= @car.mpg_city %>/<%= @car.mpg_highway %>
+          </span>
+       </p>
+      <% end %>
+      <% if @car.engine.length > 0 %>
+        <p>
+          <img src="/assets/engine.png">
+          <span class="right">
+            <%= @car.engine %>
+          </span>
+        </p>
+      <% end %>
+      <% if @car.transmission.length > 0 %>
+        <p>
+          <i class="material-icons small">settings</i>
+          <span class="right">
+            <%= @car.transmission %>
+          </span>
+        </p>
+      <% end %>
+      <% if @car.color.length > 0 %>
+        <p>
+          <i class="material-icons small">color_lens</i>
+          <span class="right">
+            <%= @car.color %>
+          </span>
+        </p>
+      <% end %>
+      <% if @car.miles.length > 0 %>
+        <p>
+          <img src="/assets/odometer.svg" style="width: 29px;">
+          <span class="right">
+            <%= @car.miles %> miles
+          </span>
+        </p>
+      <% end %>
+    </div>
+
   </div>
+
 </div>
+
 <script>
-  $(document).ready(function(){
-    $('.slider').slider();
-  });
+    $(document).ready(function(){
+      $('.slider').slider({full_width: true, indicators: true});
+    });
 </script>

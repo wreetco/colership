@@ -3,73 +3,76 @@
 </script>
 
 <div class="section">
-				<div class="row" style="margin-bottom: .7em; margin-top: 1em;">
-					<div class="col s12 l12">
-						<h2 class="center">Inventory</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 m12" style="margin-bottom: 3.2em;">
-						<div class="icon-block">
-							<h2 class="center"><i class="material-icons" style="font-size: 1.5em;">search</i></h2>
-              <br>
-							<p class="center">
-								<h5 class="center">Use our inventory search system to find the perfect pre-owned vehicle for you today!</h5>
-							</p>
-						</div>
-					</div>
-					<div class="col s12 m12">
-            <form action="/inventory/search" method="post">
-						  <div class="card  hoverable grey lighten-3">
-							  <div class="card-content black-text">
-								  <span class="card-title red-text darken-1">
-									  <h4>Car Search</h4>
-								  </span>
-								  <div class="row center">
-  								  <div class="input-field col s12 ">
-                      <select  onchange="modelUpdate()" id="selectOpt" name="make">
-                        <option value="" disabled selected>-</option>
-                        <% @makes.each do |m| %>
-                          <option value="<%= m[:make] %>"><%= m[:make] %></option>
-                        <% end %>
-										  </select>
-										  <label>Make</label>
-									  </div>
-                    <div class="input-field col s12">
-                      <select id="models_select" name="model">
-                        <option value="" disabled slected>-</option>
-                      </select>
-										  <label>Model</label>
-                    </div>
-									  <div class="col s12 m12 center">
-										  <br>
-										  <button class="btn waves-effect waves-light red darken-1" type="submit" name="action">Search
-											  <i class="material-icons right">send</i>
-										  </button>
-									  </div>
-								  </div>
-							  </div>
+	<div class="row" style="margin-bottom: .7em; margin-top: 1em;">&nbsp;
+	</div>
+	<div class="row" style="min-height: 900px;">
+		<div class="col s12 m5">
+      <form action="/inventory/search" method="post">
+			  <div class="card  hoverable grey lighten-3">
+				  <div class="card-content black-text">
+					  <div class="row center">
+						  <div class="input-field col s12 ">
+                <select  onchange="modelUpdate()" id="selectOpt" name="make">
+                  <option value="" disabled selected>-</option>
+                  <% @makes.each do |m| %>
+                    <option value="<%= m[:make] %>"><%= m[:make] %></option>
+                  <% end %>
+							  </select>
+							  <label>Make</label>
 						  </div>
-            </div>
-					</div>
-				</div>
-			</div>
-			<script>
-				$(document).ready(function() {
-					$('select').material_select();
-				});
 
-        function modelUpdate(){
-          var makeselect = document.getElementById("selectOpt");
-          var make = (makeselect.options[makeselect.selectedIndex].value);
-          for(var i = 0; i < makes[make].length; i++) {
-            model = makes[make][i];
-            option = document.createElement("option");
-            option.value = makes[make][i];
-            option.innerHTML = makes[make][i];
-            $('#models_select')[0].appendChild(option);
-          }
-          $('select').material_select();
-        }
-			</script>
+              <div class="input-field col s12">
+                <select id="models_select" name="model">
+                  <option value="" disabled selected>-</option>
+                </select>
+							  <label>Model</label>
+              </div>
+						  <div class="col s12 m12 center">
+							  <br>
+							  <button class="btn waves-effect waves-light red darken-1" type="submit" name="action">Search
+								  <i class="material-icons right">send</i>
+							  </button>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+      </div>
+			<div class="col s12 m7" style="margin-bottom: 3.2em;">
+				<div class="icon-block">
+					<h3>
+						<i class="material-icons" style="font-size: 1em; position: relative; top: .2em;">search</i>
+						Inventory Search
+					</h3>
+					<p>
+						Use the inventory search tool to easily browse our large selection of quality pre-owned
+						vehicles.
+					</p>
+					<p>
+						If you see something you like, please feel free to <a href="/contact">contact us</a> to get
+						the Quik Auto Sales price.
+					</p>
+				</div>
+			</div><!-- end search card -->
+		</div>
+	</div>
 </div>
+<script>
+	$(document).ready(function() {
+		$('select').material_select();
+	});
+
+  function modelUpdate(){
+    var makeselect = document.getElementById("selectOpt");
+    var make = (makeselect.options[makeselect.selectedIndex].value);
+		$('#models_select')[0].innerHTML = "";
+		$('select').material_select();	
+		for(var i = 0; i < makes[make].length; i++) {
+      model = makes[make][i];
+      option = document.createElement("option");
+      option.value = makes[make][i];
+      option.innerHTML = makes[make][i];
+      $('#models_select')[0].appendChild(option);
+    }
+    $('select').material_select();
+  }
+</script>

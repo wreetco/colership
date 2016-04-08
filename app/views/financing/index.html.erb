@@ -1,10 +1,10 @@
 <div class="section">
 	<div class="row" style="margin: 3em 0;">
 		<div class="col s12 m6 hide-on-small-only finance-img">
-			<img src="http://i.istockimg.com/file_thumbview_approve/79001237/6/stock-photo-79001237-business-monitoring-and-big-data.jpg">
+			<img src="assets/deal.jpg" style="width:100%;" alt="People getting financed">
 		</div>
 		<div class="col s12 m6 ftext">
-			<h3>Financing</h3>
+			<h3 class="center">Financing</h3>
 			<p>
 				Contact Quik Auto Sales and let our expert team of professional salesmen guide you through the financing process, see how easy our loan process is today!
 			</p>
@@ -15,53 +15,344 @@
 	</div>
 
 	<div class="row">
-		<form class="col s12">
+		<form class="col s12" method="post" action="/contact/new">
+			<input type="hidden" name="contact[form]" value="Financing form">
 			<div class="card hoverable grey lighten-3">
 				<div class="card-content">
-					<!--<span class="card-title red-text darken-1">
-						<h4>Financing Form</h4>
-					</span>-->
-					<div class="row">
-						<div class="input-field col s12 m6 l6">
-							<input id="first_name" type="text" class="validate">
-							<label for="first_name">First Name</label>
-						</div>
-						<div class="input-field col s12 m6 l6">
-							<input id="last_name" type="text" class="validate">
-							<label for="last_name">Last Name</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12 m6 l6">
-							<input id="address" type="text" class="validate">
-							<label for="address">Address</label>
-						</div>
-						<div class="input-field col s12 m6 l6">
-							<input id="city" type="text" class="validate">
-							<label for="city">City</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12 m6 l6">
-							<input id="state" type="text" class="validate">
-							<label for="state">State</label>
-						</div>
-						<div class="input-field col s12 m6 l6">
-							<input id="zip" type="text" class="validate">
-							<label for="zip">Zip</label>
-						</div>
-					</div>
+					<span class="card-title red-text darken-1">
+						<h6>Personal</h6>
+					</span>
 
 					<div class="row">
 						<div class="input-field col s12 m6 l6">
-							<input id="phone" type="text" class="validate">
-							<label for="phone">Phone</label>
+							<input id="first_name" type="text" name="contact[first_name]" class="validate">
+							<label for="first_name">First Name</label>
 						</div>
 						<div class="input-field col s12 m6 l6">
-							<input id="email" type="text" class="validate">
+							<input id="middle_name" type="text" name="contact[middle_name]" class="validate">
+							<label for="middle_name">Middle Name</label>
+						</div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="last_name" type="text" name="contact[last_name]" class="validate">
+              <label for="last_name">Last Name</label> 
+            </div>
+						<div class="input-field col s12 m6 l6">
+							<input id="address" type="text" name="contact[address]" class="validate">
+							<label for="address">Address</label>
+						</div>
+          </div>
+
+          <div class="row">
+						<div class="input-field col s12 m6">
+							<input id="city" type="text" name="contact[city]" class="validate">
+							<label for="city">City</label>
+						</div>
+						<div class="input-field col s12 m6 l6">
+							<input id="state" type="text" name="contact[state]" class="validate">
+							<label for="state">State</label>
+						</div>
+          </div>
+
+          <div class="row">
+						<div class="input-field col s12 m6 l6">
+							<input id="zip" type="number" name="contact[zip]" class="validate">
+							<label for="zip">Zip</label>
+						</div>
+						<div class="input-field col s12 m6 l6">
+							<input id="daytime_phone" type="tel" name="contact[daytime_phone]" class="validate">
+							<label for="daytime_phone">Daytime Phone</label>
+						</div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6 l6">
+              <input id="evening_phone" type="tel" name="contact[evening_phone]" class="validate">
+              <label for="evening_phone">Evening Phone</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="mobile_phone" type="tel" name="contact[mobile_phone]" class="validate">
+              <label for="mobile_phone">Mobile Phone</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6 l6">
+              <input id="fax" type="number" name="contact[fax]" class="validate">
+              <label for="fax">Fax</label>
+            </div>
+						<div class="input-field col s12 m6 l6">
+							<input id="email" type="email" name="contact[email]" class="validate">
 							<label for="email">Email</label>
 						</div>
 					</div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="social_security" type="number" name="contact[social_security]" class="validate" >
+              <label for="social_security">Social Security Number</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="birthday" type="text" name="contact[birthday]" class="validate">
+              <label for="birthday">Birthday (MM/DD/YYYY)</label>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="current_payment" type="number" name="contact[current_payment]" class="validate">
+              <label for="current_payment">Mortgage/Rent Payment</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="time_at_current_residence" type="number" name="contact[time_at_current_residence]" class="validate">
+              <label for="time_at_current_residence">Time at Current Residence</label>
+            </div>
+          </div>
+
+  
+
+          <div class="row">
+            <div class="input-field col s12">
+              <select name="contact[residence type]">
+                <option value="" disabled selected>-</option>
+                <option value="own_with_mortgage">Own With Mortgage</option>
+                <option value="own_without_mortgage">Own Without Mortgage</option>
+                <option value="rent">Rent</option>
+                <option value="live_with_relative">Live With Relative</option>
+                <option value="other">Other</option>
+              </select>
+              <label>Residence Type</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="previous_address_if_current_residence_less_five_years" type="number" name="contact[previous_address_if_current_residence_less_five_years]" class="validate">
+              <label for="previous_address_if_current_residence_less_five_years">Previous address if lived at current address for less than five years</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <select multiple name="contact[accounts_in_name]">
+                <option value="" disabled selected>-</option>
+                <option value="utilities">Utilities</option>
+                <option value="savings">Savings</option>
+                <option value="checkings">Checkings</option>
+                <option value="phone">Phone</option>
+              </select>
+              <label>Accounts in your name</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="drivers_license_number" type="number" name="contact[drivers_license_number]" class="validate">
+              <label for="drivers_license_number">Drivers License Number</label>
+            </div>
+            <div class="input-field col s6 m3">
+              <input id="drivers_license_state" type="text" name="contact[drivers_license_state]" class="validate">
+              <label for="drivers_license_state">D.L. State</label>
+            </div>
+            <div class="input-field col s6 m3">
+              <input id="drivers_license_expiration_date" type="text" name="contact[drivers_license_expiration_date]" class="validate">
+              <label for="drivers_license_expiration_date">D.L. Exp Date</label>
+            </div>
+          </div>
+          
+          <span class="card-title red-text darken-1">
+            <h6>Loan Information</h6>
+          </span>   
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="desired_loan_amount" type="number" name="contact[desired_loan_amount]" class="validate">
+              <label for="desired_loan_amount">Desired Loan Amount</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="desired_monthly_payment" type="number" name="contact[desired_monthly_payment]" class="validate">
+              <label for="desired_monthly_payment">Desired Monthly Payment</label>
+            </div>
+          </div>
+
+          <span class="card-title red-text darken-1">
+            <h6>Employment</h6>
+          </span>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="employer_name" type="text" name="contact[employer_name]" class="validate">
+              <label for="employer_name">Employer Name</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="employer_address" type="text" name="contact[employer_address]" class="validate">
+              <label for="employer_address">Employer Address</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="employer_city" type="text" name="contact[employer_city]" class="validate">
+              <label for="employer_city">Employer City</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="employer_state" type="text" name="contact[employer_state]" class="validate">
+              <label for="employer_state">Employer State</label>
+            </div>
+          </div>
+ 
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="employer_zip" type="number" name="contact[employer_zip]" class="validate">
+              <label for="employer_zip">Employer Zip</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="employer_phone" type="tel" name="contact[employer_phone]" class="validate">
+              <label for="employer_phone">Employer Phone</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <select name="contact[employment_status]">
+                <option value="" disabled selected>-</option>
+                <option value="part_time">Part Time</option>
+                <option value="full_time">Full Time</option>
+                <option value="retired">Retired</option>
+                <option value="military">Military</option>
+                <option value="self_employed">Self-Employed</option>
+                <option value="contract">Contract</option>
+                <option value="seasonal">Seasonal</option>
+                <option value="temporary">Temporary</option>
+                <option value="unemployed">Unemployed</option>
+              </select>
+              <label>Employment Status</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="business_phone" type="tel" name="contact[business_phone]" class="validate">
+              <label for="business_phone">Business Phone</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="occupation" type="text" name="contact[occupation]" class="validate">
+              <label for="occupation">Occupation</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="years_worked_at_job" type="number" name="contact[years_worked_at_job]" class="validate">
+              <label for="years_worked_at_job">Years At Job</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <select name="contact[payment_schedule]">
+                <option value="" disabled selected>-</option>
+                <option value="weekly">Weekly</option>
+                <option value="bi_weekly">Bi-Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="bi_monthly">Bi-Monthly</option>
+                <option value="yearly">Yearly</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="how_much_per_paycheck" type="number" name="contact[how_much_per_paycheck]" class="validate">
+              <label for="how_much_per_paycheck">How Much Per Paycheck</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="other_income" type="number" name="contact[other_income]" class="validate">
+              <label for="other_income">Other Income</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <p>
+                I agree that by submitting this application, I authorize and give this dealership, 
+                as well as any potential financing source this dealership presents this application to, 
+                my consent to obtain my credit report from any credit reporting agency used to complete investigation of my credit.
+              </p>
+            </div>
+            <div class="input-field col s12 m6">
+                <input type="checkbox" id="credit_consent_check" name="contact[credit_consent_check]" class="filled-in">
+                <label for="credit_consent_check">Credit Report Consent</label> 
+            </div>
+          </div>
+
+          <span class="card-title red-text darken-1">
+            <h6>Vehicle Information</h6>
+          </span>
+          
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="vehicle_make" type="text" name="contact[vehicle_make]" class="validate">
+              <label for="vehicle_make">Vehicle Make</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="vehicle_model" type="text" name="contact[vehicle_model]" class="validate">
+              <label for="vehicle_model">Vehicle Model</label>
+            </div>
+          </div>        
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="vehicle_year" type="number" name="contact[vehicle_year]" class="validate">
+              <label for="vehicle_year">Vehicle Year</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="vehicle_mileage" type="number" name="contact[vehicle_mileage]" class="validate">
+              <label for="vehicle_mileage">Vehicle Mileage</label>
+            </div>
+          </div>
+
+          <span class="card-title red-text darken-1">
+            <h6>Down Payment</h6>
+          </span>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="down_payment_amount" type="number" name="contact[down_payment_amount]" class="validate">
+              <label for="down_payment_amount">Down Payment Amount</label>
+            </div>
+          </div>
+
+          <span class="card-title red-text darken-1">
+            <h6>Trade-In Details</h6>
+          </span>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="trade_in_vehicle_make" type="text" name="contact[trade_in_vehicle_make]" class="validate">
+              <label for="trade_in_vehicle_make">Trade-In Vehicle Make</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="trade_in_vehicle_model" type="text" name="contact[trade_in_vehicle_model]" class="validate">
+              <label for="trade_in_vehicle_model">Trade-In Vehicle Model</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="trade_in_vehicle_year" type="number" name="contact[trade_in_vehicle_year]" class="validate">
+              <label for="trade_in_vehicle_year">Trade-In Vehicle Year</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="trade_in_vehicle_mileage" type="number" name="contact[trade_in_vehicle_mileage]" class="validate">
+              <label for="trade_in_vehicle_mileage">Trade-In Vehicle Mileage</label>
+            </div>
+          </div>
+
+
+
+
+
 					<div class="row">
 						<div class="col s12 m12 center">
 							<button class="btn waves-effect waves-light red darken-1" type="submit" name="action">Submit
@@ -75,3 +366,11 @@
 	</div>
 
 </div>
+
+<script>
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+         
+</script>

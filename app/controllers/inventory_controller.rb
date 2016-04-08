@@ -4,10 +4,10 @@ class InventoryController < ApplicationController
   def index
     # get the make list
     @makes = Array.new
-    makes = Shoppe::Product.select(:make)
+    makes = Shoppe::Product.select(:make).order(:make).uniq
     makes.each do |r|
       models = Array.new
-      mlist = Shoppe::Product.select(:model).where(:make => r.make)
+      mlist = Shoppe::Product.select(:model).where(:make => r.make).order(:model).uniq
       mlist.each do |m|
         models << m.model
       end
@@ -25,7 +25,13 @@ class InventoryController < ApplicationController
   end # end index
 
   def search
-    @cars = Shoppe::Product.all.where(:make => params[:make], :model => params[:model])
+    if params[:make] && params[:model]
+      @cars = Shoppe::Product.all.where(:make => params[:make], :model => params[:model])
+    elsif params[:make]
+      @cars = Shoppe::Product.all.where(:make => params[:make])
+    else
+      @cars = Shoppe::Product.all
+    end
 
   end # end search method
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'inventory/index'
 
   get 'contact/index'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
 	get 'contact', to: 'contact#index'
+	post 'contact/new', to: 'contact#new'
 	get 'financing', to: 'financing#index'
 	get 'inventory', to: 'inventory#index'
 	post 'inventory/search', to: 'inventory#search'
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
 
 	# vin tool route
 	get "/vinnythevintool/:vin", to: "vin_lookup#getCarByVin"
+
+	get '404', :to => 'application#fofo'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
